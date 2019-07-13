@@ -1,0 +1,568 @@
+@import "../scss/bootstrap";
+
+
+
+$spacer: 1rem !default;
+$navbar-padding-y:                  $spacer / 2 !default;
+$navbar-padding-x:                  $spacer !default;
+$maincolor :#f9d042;
+$mt-25:25px;
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+
+
+  h1{
+    font-weight: 900;
+  }
+
+}
+
+.mt-25{
+  margin-top: $mt-25;
+}
+
+.separator{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
+}
+
+nav{
+  &.nav-top{
+    border-bottom: 1px solid #d6d6d6;
+
+    ul li{
+      border-right: solid 1px #d6d6d6;
+
+      &:last-child{
+        border-right:none;
+      }
+    }
+  }
+  .nav-bottom li:last-child{
+      border-bottom: none;
+    }
+  .dropdown-menu {
+    z-index: 1300;
+  }
+}
+
+.navbar-light .navbar-toggler {
+    color: $maincolor;
+    border-color: rgba(247, 211, 11, 0.96);
+}
+
+.navbar .dropdown-menu div[class*="col"] {
+   margin-bottom:1rem;
+}
+
+.navbar .dropdown-menu {
+  border:none;
+}
+
+.mobile-brand{
+  display: none;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: $maincolor;
+}
+
+.dropdown-submenu ul li{
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 991px) {
+  .nav-bottom{
+    display: none!important;
+  }
+
+  nav ul li{
+    border-right: none!important;
+  }
+
+  .mobile-brand{
+    display: block;
+  }
+
+  .jumbotron{
+     background-image: url("../img/jumbotron.jpg");
+     background-color: rgba(0, 0, 0, 0);
+     position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      width: 100%;
+      max-height: 450px;
+      opacity: 1;
+      visibility: inherit;
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 140px!important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background: url("../img/wave-mobile.png")!important;
+      }
+  }
+
+
+}
+
+
+@media screen and (min-width: 992px) {
+.navbar {
+  padding-top:0px;
+  padding-bottom:0px;
+
+}
+
+
+
+
+.navbar .nav-item {
+  padding:.5rem .5rem;
+  margin:0 .25rem;
+}
+
+.navbar .big-menu {
+  position:static;
+
+}
+
+.navbar .dropdown-menu {
+  width:100%;
+  left:0;
+  right:0;
+  top:60px;
+}
+
+.dropdown .show{
+  display: table;
+}
+
+
+.sub-header{
+  padding: 15px;
+  font-weight: bold;
+}
+
+.selector {
+  .active{
+      background-color: #fff;
+  }
+}
+
+.nav-top  .nav-link, .nav-bottom  .nav-link{
+
+    position: relative;
+
+    &::before{
+      content: '';
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 0%;
+    	height: 100%;
+    	z-index: 1;
+    	opacity: 0;
+    	background-color: rgba(249,208,66,0.5);
+    	-webkit-transition: all 0.3s;
+    	-moz-transition: all 0.3s;
+    	-o-transition: all 0.3s;
+    	transition: all 0.3s;
+    }
+    &:hover::before{
+      opacity: 1;
+      width: 100%;
+    }
+}
+
+.dropdown-menu .nav-link{
+    border-bottom: 1px solid black;
+    position: relative;
+
+    &::before{
+      content: '';
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 0%;
+    	height: 100%;
+    	z-index: 1;
+    	opacity: 0;
+    	background-color: rgba(0,0,0,0.5);
+    	-webkit-transition: all 0.3s;
+    	-moz-transition: all 0.3s;
+    	-o-transition: all 0.3s;
+    	transition: all 0.3s;
+    }
+    &:hover::before{
+      opacity: 1;
+      width: 100%;
+    }
+}
+
+.navbar .big-menu:hover .dropdown-menu, .navbar .big-menu .dropdown-menu:hover {
+  display:block!important;
+}
+
+  .navbar .dropdown-menu {
+    border: 1px solid rgba(0,0,0,.15);
+    background-color: rgba(249, 208, 66, 0.9);
+  }
+
+}
+
+////////////////////////////////////
+/////////////jumbotron////////////
+/////////////////////////////////
+.z-100{
+  z-index: 1000;
+}
+.cta{
+  padding: 15px;
+}
+
+.jumbotron{
+   background-image: url("../img/jumbotron.jpg");
+   background-color: rgba(0, 0, 0, 0);
+   position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    height: 450px;
+    opacity: 1;
+    visibility: inherit;
+    overflow: hidden;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 330px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background: url("../img/wave.png");
+    }
+}
+
+.img-banner{
+  margin-top: -60px;
+  animation-duration: 1s;
+    animation-delay: 0.3s;
+}
+
+////////////////////////////////////
+////////////////cards//////////////
+///////////////////////////////////
+.section-title{
+    .card-title{
+      position: relative;
+      &:before{
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 0;
+        right: 0;
+        margin: -8px auto;
+        position: absolute;
+        width: 40px;
+        background: $maincolor;
+      }
+    }
+   h2:before{
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    right: 0;
+    margin: -2px auto;
+    position: absolute;
+    width: 40px;
+    background: $maincolor;
+  }
+}
+
+.title{
+   text-transform: uppercase;
+   font-weight: 500;
+   text-align: center;
+
+}
+
+.card{
+  border: none;
+  .card-body{
+    padding: 10px 0px;
+  }
+  .card-img{
+     filter: grayscale(100%);
+     transition: 1s;
+     &:hover{
+       filter: grayscale(0%);
+     }
+  }
+
+}
+
+////////////////////////////////////
+///////////testimony//////////////
+//////////////////////////////////
+.jumbotron-carousel{
+  background-image: url("../img/zenius-bg.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center top;
+   width: 100%;
+   height:450px;
+   opacity: 1;
+   color: white;
+   visibility: inherit;
+   overflow: hidden!important ;
+
+   .card{
+     background: transparent;
+
+    img{
+      height: 100px!important;
+      width: 100px;
+      margin: 0 auto;
+    }
+   }
+
+}
+
+/////////////////////////////////
+////////////materi///////////////
+//////////////////////////////////
+.materi{
+  .nav-link {
+    color: black;
+
+    .active{
+      color:white!important;
+
+    }
+
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      background-color: rgba(0,0,0,0.5);
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    &:hover::before{
+      opacity: 1;
+      width: 100%;
+    }
+  }
+  .sel>.active{
+    background-color: black;
+  }
+  .nav-item .active{
+   color: #fff !important;
+   background-color: black;
+
+ }
+}
+
+.pilih{
+  border-left: solid black 1px!important;
+  .nav-link{
+    border-bottom: 1px solid black!important;
+  }
+}
+
+
+
+.btn-acord{
+
+  &:focus{
+      outline: none !important;
+      box-shadow: none!important;
+  }
+}
+
+#accordion{
+  .nav-link,.dropdown-toggle,a{
+    color: black !important;
+  }
+}
+
+
+/////////////////////////////////
+////////////////subs/////////////
+/////////////////////////////////
+
+.subs{
+  background-image: url("../img/zenius-bgy.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center top;
+   width: 100%;
+   min-height:450px;
+   opacity: 1;
+   color: white;
+   visibility: inherit;
+   overflow: hidden!important ;
+   display: flex;
+   align-items: center;
+   .card-deck{
+     align-items: center;
+   }
+   .card{
+     height: 350px!important;
+     min-width: 200px;
+     width:250px;
+     .card-body{
+       display: flex;
+       align-items: center;
+     }
+   }
+
+}
+
+////////////////////////////////////
+//////////profile/////////////
+//////////////////////////////
+
+.profile{
+  background-image: url("../img/profile.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+   background-repeat: no-repeat;
+
+   width: 100%;
+   height:254px;
+   opacity: 1;
+   color: white;
+   visibility: inherit;
+   overflow: hidden!important ;
+   display: flex;
+   align-items: center;
+
+}
+
+.table-profile{
+  a{
+    color: black!important;
+  }
+}
+
+/////////////////////////////////////
+//////////buton/////////////////////
+///////////////////////////////////
+#scroll {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:black;
+    text-indent:-9999px;
+    display:none;
+}
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+#scroll:hover {
+    background-color:$maincolor;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}
+
+.button8{
+	color: rgba(0,0,0,1);
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	border: 1px solid rgba(0,0,0,0.5);
+	position: relative;
+}
+.button8 a{
+	color: rgba(51,51,51,1);
+	text-decoration: none;
+	display: block;
+}
+.button8 span{
+	z-index: 2;
+	display: block;
+	position: absolute;
+
+}
+.button8::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	background-color: rgba(255,255,255,0.5);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+
+}
+.button8:hover::before{
+	opacity: 1;
+	width: 100%;
+}
